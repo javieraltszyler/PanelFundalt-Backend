@@ -24,4 +24,5 @@ sqlparse==0.5.3
 tzdata==2025.1
 uritemplate==4.1.1
 django-cors-headers==4.7.0
+gunicorn==23.0.0
 # Python 3.13.0
