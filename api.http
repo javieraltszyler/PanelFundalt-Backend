@@ -1,0 +1,180 @@
+# 
+# JWT's
+# 
+
+
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+
+# 
+# Beneficiaries
+# 
+
+
+###
+GET http://localhost:8000/beneficiaries/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzNDYxMTUwLCJpYXQiOjE3NDM0NjAyNTAsImp0aSI6IjgyM2ZhMjM1ZGZkYzQzNDlhMzgzOTU1N2Y5MzJhNGFhIiwidXNlcl9pZCI6MX0.0vS6SYF5BiJPLuEqJWI-njcpkwPkdVPPFEs-bCUCuJA
+
+
+
+###
+GET http://localhost:8000/beneficiaries/46/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+
+###
+POST http://localhost:8000/beneficiaries/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+{
+    "dni": "12121212",
+    "name": "Leandro",
+    "surname": "Mattana",
+    "nickname": "Lean",
+    "birthdate": "1998-09-27",
+    "phone_number": "567-890-4321",
+    "reference_phone_number": "678-901-1111",
+    "location": "Streets: Av.Sabin & Junin. Near parking lot",
+    "is_fixed_or_transitory_place": false,
+    "contact_info": null,
+    "life_center": null,
+    "receives_subsidies": false,
+    "subsidies_details": null
+}
+
+
+
+###
+PUT http://localhost:8000/beneficiaries/46/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+{
+    "name": "Roberto",
+    "surname": "Mattana",
+    "nickname": "Lean",
+    "birthdate": "1998-09-27",
+    "phone_number": "567-890-4321",
+    "reference_phone_number": "678-901-1111",
+    "location": "Streets: Av.Sabin & Junin. Near parking lot",
+    "is_fixed_or_transitory_place": false,
+    "contact_info": null,
+    "life_center": null,
+    "receives_subsidies": false,
+    "subsidies_details": null
+}
+
+
+###
+PATCH http://localhost:8000/beneficiaries/46/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+{
+    "name": "Jacinto",
+    "surname": "Flores",
+    "nickname": "JJ",
+    "receives_subsidies": true
+}
+
+
+###
+DELETE  http://localhost:8000/beneficiaries/45/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+
+# 
+# Assistances
+# 
+
+
+###
+GET http://localhost:8000/assistances/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+
+###
+GET http://localhost:8000/assistances/2 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+
+###
+POST http://localhost:8000/assistances/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+{
+    "created_at": "2025-02-10",
+    "author": "Arnoldo Firipondio",
+    "assistance_type": "Food assistance",
+    "geolocation": "40.785091, -73.968445",
+    "location_details": "Bryant Park, near the font",
+    "extended_assistance": true,
+    "notes": "Beneficiary found in an starvation state.",
+    "beneficiary": 34 
+}
+
+
+###
+PUT http://localhost:8000/assistances/2/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+{
+    "created_at": "2025-02-02",
+    "author": "Joselin Suarez",
+    "assistance_type": "General Checkup",
+    "geolocation": "40.785091, -73.968445",
+    "location_details": "Close to the church",
+    "notes": "Will this patch patch my patcher?.",
+    "beneficiary": 34
+}
+
+
+###
+PATCH http://localhost:8000/assistances/2/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+{
+    "created_at": "2025-02-02",
+    "author": "Albert Camus",
+    "assistance_type": "Medical Checkup",
+    "geolocation": "40.785091, -73.968445",
+    "location_details": "Bryant Park, near the font",
+    "extended_assistance": true
+}
+
+
+###
+DELETE http://localhost:8000/assistances/2/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzA3MjIyLCJpYXQiOjE3NDEzMDYzMjIsImp0aSI6IjhiNGE5YzkwNzE2NzQ5OTdhYzgyOTFkMTIyZjQ5NjEyIiwidXNlcl9pZCI6MX0.S8Xi4qX4Z2nvrrexYkFtJCIRAPQgEvSRcJTBoAw7SyM
+
+
+# 
+# Health Checks
+#
+
+
+###
+GET http://localhost:8000/api/health/ HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/health/db/ HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/health/detailed/ HTTP/1.1
+Content-Type: application/json
+
+
