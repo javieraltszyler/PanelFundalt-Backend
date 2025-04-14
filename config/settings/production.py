@@ -1,7 +1,8 @@
 from .base import *
 import os
 
-env.read_env(os.path.join(BASE_DIR, '.env_prod'))
+# No cargar archivo .env en producción, las variables ya vienen del entorno
+# env.read_env(os.path.join(BASE_DIR, '.env_prod'))
 
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', default=False) #Cambiar a variable 'DJANGO_DEBUG'
