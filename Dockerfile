@@ -29,7 +29,7 @@ EXPOSE ${PORT}
 
 # Ejecutar migraciones y luego iniciar el servidor
 CMD python manage.py migrate && \
-    gunicorn panelaltchat.wsgi:application \
+    gunicorn config.wsgi:application \
     --bind 0.0.0.0:${PORT} \
     --workers 1 \
     --threads 8 \
