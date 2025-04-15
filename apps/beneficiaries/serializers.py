@@ -29,7 +29,6 @@ class BeneficiarySerializer(serializers.ModelSerializer):
             'life_center',
             'has_family_contact',
             'subsidies',
-            'subsidies_details',
             'health_info'
         ]
 
