@@ -11,6 +11,8 @@ class BeneficiarySerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'dni',
+            'author',
+            'author_details',
             'has_physical_dni',
             'first_name',
             'last_name',
