@@ -17,6 +17,10 @@ class Beneficiary(models.Model):
             message='DNI must be between 6 and 10 digits'
         )]
     )
+    has_physical_dni = models.BooleanField(
+        default=False,
+        verbose_name="has physical dni"
+    )
     first_name = models.CharField(
         max_length=100,
         blank=True,
@@ -48,28 +52,45 @@ class Beneficiary(models.Model):
         null=True,
         verbose_name="phone"
     )
-    reference_phone_number = models.CharField(
-        max_length=100,
-        help_text="format: XXX-XXX-XXXX",
+    reference_phone_number = models.TextField(
+        help_text="Whose number is it?",
         blank=True,
         null=True,
         verbose_name="reference phone"
     )
-    location = models.TextField(
-        help_text="Enter the approximate location where this person was found (e.g., street name, nearby landmark, or intersection)",
+    geolocation = models.CharField(
+        help_text="Enter X, Y coordinates",
+        max_length=100,
         blank=True,
         null=True,
-        verbose_name="location"
+        verbose_name="geolocation"
+    )
+    address = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="address"
+    )
+    address_reference = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="address reference"
+    )
+    sex = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="sex"
+    )
+    nationality = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="nationality"
     )
     is_fixed_or_transitory_place = models.BooleanField(
         default=False,
         verbose_name="transitory location"
-    )
-    contact_info = models.TextField(
-        help_text="Enter any contact details related to this person (e.g., email, or social media)",
-        blank=True,
-        null=True,
-        verbose_name="contact info"
     )
     life_center = models.CharField(
         max_length=100,
@@ -77,17 +98,16 @@ class Beneficiary(models.Model):
         null=True,
         verbose_name="life center"
     )
-    receives_subsidies = models.BooleanField(
+    has_family_contact = models.TextField(
         default=False,
-        help_text="Does this person receives any subsidies or financial aid - Y/N",
+        help_text="Does this person any relationship or contact with family members? Specify",
+        verbose_name="has family contact"
+    )  
+    subsidies = models.TextField(
+        default=False,
+        help_text="Does this person receives any subsidies or financial aid",
         verbose_name="subsidies"
     )  
-    subsidies_details = models.TextField(
-        help_text="Name all the subsidies this person receives",
-        blank=True,
-        null=True,
-        verbose_name="subsidies description"
-    )
     health_info = models.TextField(
         help_text="Describe any relevant health conditions, ongoing treatments, or recurring needs such as medication, psychological support, or mobility aids. This field is intended for background health information rather than specific assistances provided.",
         blank=True,
