@@ -12,7 +12,7 @@ urlpatterns = [
     path('api/beneficiaries/', include('apps.beneficiaries.urls')),
     path('api/assistances/', include('apps.assistances.urls')),
     
-    path('api/health/', include('apps.health_checks.urls')), 
+    path('', include('apps.health_checks.urls')), 
     path('silk/', include('silk.urls', namespace='silk')),
     
     # Endpoints de autenticación

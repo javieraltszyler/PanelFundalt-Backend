@@ -19,7 +19,7 @@ class BeneficiaryViewSet(viewsets.ModelViewSet):
     """
     queryset = Beneficiary.objects.all()
     serializer_class = BeneficiarySerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     pagination_class = None
     filterset_class = BeneficiaryFilter
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
