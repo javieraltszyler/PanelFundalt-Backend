@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from datetime import timedelta
 
 # Determinar el entorno
-DJANGO_ENV = os.getenv('DJANGO_ENV', 'env_dev')
+DJANGO_ENV = os.getenv('DJANGO_ENV', 'development')
 
 # Cargar el archivo .env específico para el entorno
 if os.path.exists(f'.env.{DJANGO_ENV}'):
@@ -19,10 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'dlsakjadsjlkjdasladskjl1020')
 
 
-DEBUG = DJANGO_ENV == 'env_dev'
+DEBUG = DJANGO_ENV == 'development'
 
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
@@ -127,39 +127,39 @@ DATABASES = {
 
 
 
-# CORS settings
-CORS_ALLOWED_ORIGINS = [
-    "http://54.94.65.36:80",   # IP de producción
-    "http://localhost:3000",     # Desarrollo local
-    "http://127.0.0.1:3000",     # Desarrollo local alternativo
-    "http://panelfundalt.estoesalt.com:80",   # DNI y puerto de producción
-]
+# # CORS settings
+# CORS_ALLOWED_ORIGINS = [
+#     "http://54.94.65.36:80",   # IP de producción
+#     "http://localhost:3000",     # Desarrollo local
+#     "http://127.0.0.1:3000",     # Desarrollo local alternativo
+#     "http://panelfundalt.estoesalt.com:80",   # DNI y puerto de producción
+# ]
 
-# Permitir credenciales (cookies, headers de autenticación)
-CORS_ALLOW_CREDENTIALS = True
-
-
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
+# # Permitir credenciales (cookies, headers de autenticación)
+# CORS_ALLOW_CREDENTIALS = True
 
 
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
+# CORS_ALLOW_METHODS = [
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# ]
+
+
+# CORS_ALLOW_HEADERS = [
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
