@@ -21,7 +21,7 @@ COPY . .
 # Variables de entorno para Django
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV DJANGO_SETTINGS_MODULE=config.settings.production
+ENV DJANGO_SETTINGS_MODULE=config.settings
 ENV PORT=8080
 
 # Exponer puerto para Cloud Run
