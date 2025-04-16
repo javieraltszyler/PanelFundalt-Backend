@@ -22,7 +22,7 @@ class BeneficiaryViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     pagination_class = None
     filterset_class = BeneficiaryFilter
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filter_backends = [DjangoFilterBackend]
     search_fields = ['first_name', 'last_name', 'nickname', 'dni']
 
 
