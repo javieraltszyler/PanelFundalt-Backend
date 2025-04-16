@@ -17,6 +17,10 @@ class Beneficiary(models.Model):
             message='DNI must be between 6 and 10 digits'
         )]
     )
+    has_physical_dni = models.BooleanField(
+        default=False,
+        verbose_name="has physical dni"
+    )
     author = models.BigIntegerField(
         blank=True,
         null=True,
@@ -26,10 +30,6 @@ class Beneficiary(models.Model):
         blank=True,
         null=True,
         verbose_name="author"
-    )
-    has_physical_dni = models.BooleanField(
-        default=False,
-        verbose_name="has physical dni"
     )
     first_name = models.CharField(
         max_length=100,

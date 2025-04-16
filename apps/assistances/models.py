@@ -16,16 +16,9 @@ class Assistance(models.Model):
         max_length=100,
         verbose_name="author"
     )
-    assistance_type = models.CharField(
-        max_length=100,
-        verbose_name="assistance type"
-    )
-    geolocation = models.CharField(
-        help_text="Enter X, Y coordinates",
-        max_length=100,
-        blank=True,
-        null=True,
-        verbose_name="geolocation"
+    is_first_assistance = models.BooleanField(
+        default=False,
+        verbose_name="is first assistance"
     )
     address = models.CharField(
         max_length=100,
@@ -37,6 +30,18 @@ class Assistance(models.Model):
         blank=True,
         null=True,
         verbose_name="address reference"
+    )
+    geolocation = models.CharField(
+        help_text="Enter X, Y coordinates",
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="geolocation"
+    )
+    assistance_type = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="assistance type"
     )
     extended_assistance = models.BooleanField(
         default=False,
