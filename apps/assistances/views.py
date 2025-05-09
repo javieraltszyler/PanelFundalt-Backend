@@ -19,7 +19,7 @@ class AssistanceViewSet(viewsets.ModelViewSet):
     queryset = Assistance.objects.all()
     serializer_class = AssistanceSerializer
     permission_classes = [IsAuthenticated]
-    # pagination_class = PageNumberPagination
+    pagination_class = None #Cambiar a PageNumberPagination en el futuro 
     filterset_class = AssistanceFilter
     filter_backends = [DjangoFilterBackend]
 
