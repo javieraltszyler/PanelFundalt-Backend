@@ -129,37 +129,41 @@ DATABASES = {
 
 # # CORS settings
 # CORS_ALLOWED_ORIGINS = [
+CORS_ALLOWED_ORIGINS = [
+    "https://panelfundalt-frontend.pages.dev",
+    "http://localhost:3000",  # Para desarrollo local   
+    "http://127.0.0.1:3000", 
+]
 #     "http://54.94.65.36:80",   # IP de producción
-#     "http://localhost:3000",     # Desarrollo local
-#     "http://127.0.0.1:3000",     # Desarrollo local alternativo
+    # Desarrollo local alternativo
 #     "http://panelfundalt.estoesalt.com:80",   # DNI y puerto de producción
 # ]
 
-# # Permitir credenciales (cookies, headers de autenticación)
-# CORS_ALLOW_CREDENTIALS = True
+# Permitir credenciales (cookies, headers de autenticación)
+CORS_ALLOW_CREDENTIALS = True
 
 
-# CORS_ALLOW_METHODS = [
-#     'DELETE',
-#     'GET',
-#     'OPTIONS',
-#     'PATCH',
-#     'POST',
-#     'PUT',
-# ]
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 
-# CORS_ALLOW_HEADERS = [
-#     'accept',
-#     'accept-encoding',
-#     'authorization',
-#     'content-type',
-#     'dnt',
-#     'origin',
-#     'user-agent',
-#     'x-csrftoken',
-#     'x-requested-with',
-# ]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

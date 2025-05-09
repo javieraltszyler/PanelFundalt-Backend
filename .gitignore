@@ -172,6 +172,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+# Ignorar archivos específicos
 api.http
-
+.env.development
 .dockerignore
