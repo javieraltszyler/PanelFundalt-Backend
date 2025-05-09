@@ -13,10 +13,13 @@ from .serializers import AssistanceSerializer
 from .filters import AssistanceFilter
 
 class AssistanceViewSet(viewsets.ModelViewSet):
+    """
+    Vista para gestionar las asistencias
+    """
     queryset = Assistance.objects.all()
     serializer_class = AssistanceSerializer
     permission_classes = [IsAuthenticated]
-    pagination_class = PageNumberPagination
+    # pagination_class = PageNumberPagination
     filterset_class = AssistanceFilter
     filter_backends = [DjangoFilterBackend]
 
