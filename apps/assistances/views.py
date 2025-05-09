@@ -22,6 +22,7 @@ class AssistanceViewSet(viewsets.ModelViewSet):
     pagination_class = None #Cambiar a PageNumberPagination en el futuro 
     filterset_class = AssistanceFilter
     filter_backends = [DjangoFilterBackend]
+    search_fields = ['assistance_type', 'created_at']
 
 
 
