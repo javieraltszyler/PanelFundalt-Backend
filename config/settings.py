@@ -129,15 +129,13 @@ DATABASES = {
 
 # # CORS settings
 # CORS_ALLOWED_ORIGINS = [
-CORS_ALLOWED_ORIGINS = [
-    "https://panelfundalt-frontend.pages.dev",
-    "http://localhost:3000",  # Para desarrollo local   
-    "http://127.0.0.1:3000", 
-]
-#     "http://54.94.65.36:80",   # IP de producción
-    # Desarrollo local alternativo
-#     "http://panelfundalt.estoesalt.com:80",   # DNI y puerto de producción
+#     "https://panelfundalt-frontend.pages.dev",
+#     "http://localhost:3000",  # Para desarrollo local   
+#     "http://127.0.0.1:3000", 
 # ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 # Permitir credenciales (cookies, headers de autenticación)
 CORS_ALLOW_CREDENTIALS = True
