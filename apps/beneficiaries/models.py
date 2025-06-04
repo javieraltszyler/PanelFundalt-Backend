@@ -33,6 +33,10 @@ class Beneficiary(models.Model):
         null=True,
         verbose_name="author"
     )
+    has_physical_dni = models.BooleanField(
+    default=False,
+    verbose_name="has physical dni"
+)
     first_name = models.CharField(
         max_length=100,
         blank=True,
