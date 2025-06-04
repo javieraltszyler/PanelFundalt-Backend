@@ -17,10 +17,12 @@ class Beneficiary(models.Model):
             message='DNI must be between 6 and 10 digits'
         )]
     )
-    has_physical_dni = models.BooleanField(
-        default=False,
-        verbose_name="has physical dni"
-    )
+    has_family_contact = models.TextField(
+    blank=True,
+    null=True,
+    help_text="Does this person have any relationship or contact with family members? Specify",
+    verbose_name="has family contact"
+)
     author = models.BigIntegerField(
         blank=True,
         null=True,
@@ -114,9 +116,10 @@ class Beneficiary(models.Model):
         verbose_name="has family contact"
     )  
     subsidies = models.TextField(
-        default=False,
-        help_text="Does this person receives any subsidies or financial aid",
-        verbose_name="subsidies"
+    blank=True,
+    null=True,
+    help_text="Does this person receive any subsidies or financial aid",
+    verbose_name="subsidies"
     )  
     health_info = models.TextField(
         help_text="Describe any relevant health conditions, ongoing treatments, or recurring needs such as medication, psychological support, or mobility aids. This field is intended for background health information rather than specific assistances provided.",
